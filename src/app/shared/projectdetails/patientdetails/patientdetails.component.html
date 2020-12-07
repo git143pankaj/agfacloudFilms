@@ -1,0 +1,118 @@
+<app-header></app-header>
+<div class="clearfix"></div>
+<div class="main-body">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12">
+        <div class="top-logo mt-3">
+          <img src="assets/images/dashboard/frontlogo.jpg" alt="mobile logo">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="patient-info-sect mt-3">
+  <div class="row">
+    <div class="hd-left">
+      <h5><i class="fa fa-home mr-2" aria-hidden="true"></i>{{'StudyInformation' | translate}}</h5>
+    </div>
+    <div class="hd-right">
+      <button type="button" (click)="sharetoAll()" class="sharebtn"><i class="fa fa-share-alt mr-2"
+          aria-hidden="true"></i>{{'Share' | translate}}</button>
+    </div>
+
+
+
+  </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="patient-table">
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td class="width-362px">{{'Name' | translate}} </td>
+        <td class="width-100px">:</td>
+        <td>Pankaj Behera</td>
+      </tr>
+      <tr>
+        <td class="width-362px">{{'StudyType' | translate}}</td>
+        <td class="width-100px">:</td>
+        <td>CT Scan Collar Bone</td>
+      </tr>
+      <tr>
+        <td class="width-362px">{{'StudyDate' | translate}}</td>
+        <td class="width-100px">:</td>
+        <td>2020-10-07</td>
+      </tr>
+      <tr>
+        <td class="width-362px">{{'PID' | translate}}</td>
+        <td class="width-100px">:</td>
+        <td>A001</td>
+      </tr>
+      <tr>
+        <td class="width-362px">{{'AccessionNo' | translate}}</td>
+        <td class="width-100px">:</td>
+        <td>CTSR003</td>
+      </tr>
+      <tr>
+        <td class="width-362px">{{'CloudDateValidtill' | translate}}</td>
+        <td class="width-100px">:</td>
+        <td>2020-10-07</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="patient-btn-custom pull-right">
+    <button type="button" class="p-btn-cstm" (click)="viewReport()">{{'ViewReport' | translate}}</button>
+    <button type="submit" class="p-btn-cstm" (click)="cloudfilm()">{{'CloudFilm' | translate}}</button>
+  </div>
+
+</div>
+
+
+<div class="clearfix"></div>
+<div class="patient-info-sect mt-3">
+  <div class="row">
+    <div class="hd-left">
+      <h5><i class="fa fa-home mr-2" aria-hidden="true"></i>{{'StudyHistory' | translate}}</h5>
+    </div>
+    <div class="hd-right">
+      <button type="button" (click)="sharetoAll()" class="sharebtn"><i class="fa fa-share-alt mr-2"
+          aria-hidden="true"></i>{{'Share' | translate}}</button>
+    </div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+<div class="history-table">
+  <table class="table table-striped">
+    <tbody>
+      <tr>
+        <td>2020-10-07</td>
+        <td class="width-100px">:</td>
+        <td>CT Scan Collar Bone</td>
+        <td class="pull-right"><button type="submit" class="v-btn">{{'Views' | translate}}</button></td>
+      </tr>
+      <tr>
+        <td>2020-10-07</td>
+        <td class="width-100px">:</td>
+        <td>MRI Scan Brain</td>
+        <td class="pull-right"><button type="submit" class="v-btn">{{'Views' | translate}}</button></td>
+      </tr>
+      <tr>
+        <td>2020-10-07</td>
+        <td class="width-100px">:</td>
+        <td>CT Sacan HP to Elbow</td>
+        <td class="pull-right"><button type="submit" class="v-btn">{{'Views' | translate}}</button></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+<div class="clearfix"></div>

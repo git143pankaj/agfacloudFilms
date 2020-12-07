@@ -1,0 +1,25 @@
+<div class="patint-info-header">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-xs-12">
+        <div class="topheader">
+          <h5>{{'CloudFilm' | translate}}
+
+
+          <span class="form-inline pull-right"><img src="assets/images/dashboard/lang.png">
+            <select class="langbox" #selectedLang (change)="switchLang(selectedLang.value)">
+              <option *ngFor="let language of translate.getLangs()" [value]="language"
+                [selected]="language === translate.currentLang">
+                {{ language }}
+              </option>
+            </select>
+          </span>
+        </h5>
+          <!-- <p>Language</p> -->
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

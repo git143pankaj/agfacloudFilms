@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div class="clearfix"></div>
+<div class="show-report">
+    <div class="show-report-header">
+        <h5>CTSR003</h5>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="caution">
+                <div class="row">
+                    <div class="col-1 col-xs-3 pad_2px ">
+                        <img src="assets/images/dashboard/caution.png" class="mx-auto d-block"
+                            alt="reportimage">
+                    </div>
+                    <div class="col-11 col-xs-9 pad_2px ">
+                        <!-- <p>You are about to share your perosonal health informaion. Share study only to the
+                            intended receipaint and do not share your study with any unknown person</p> -->
+                            <p>{{'Caution' | translate}} </p>
+                    </div>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="col-3 pad_2px ">
+                            <input type="text" class="w-100 form-control " id="contrycode">
+                        </div>
+                        <div class="col-9 pad_2px">
+                            <input type="text" class="w-100 form-control" id="number">
+                        </div>
+                    </div>
+                </form>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-share" (click)="qrcodeShow()">{{'Share' | translate}}</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="clearfix"></div>
+<app-footer></app-footer>

@@ -1,0 +1,93 @@
+<app-header></app-header>
+
+<div class="front-login-wraper">
+    <div class="row justify-content-center">
+        <div class="col-4 col-xs-12">
+
+            <div class="mobile-body">
+                <div class="mob-logo mt-3 mb-3">
+                    <img src="assets/images/dashboard/frontlogo.jpg" alt="mobile logo">
+                </div>
+                <div class="loginall">
+                    <h5>{{'Login' | translate}}</h5>
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+
+
+
+                            <form [formGroup]="identifictionForm" (ngSubmit)="identificationNumber()" class="form-inline mt-3">
+                                <div class="row">
+                                    <!-- <div class="col-3 pad_2px ">
+                                        <input type="text" class="w-100 form-control " id="contrycode"
+                                            formControlName="countrycode" required placeholder="Country"
+                                            [ngClass]="{'is-invalid': submitted && f.countrycode.errors}">
+                                        <div *ngIf="f.countrycode.invalid && (f.countrycode.dirty || f.countrycode.touched)"
+                                            class="text-danger">
+                                            <small *ngIf="f.countrycode.errors.required"
+                                                class="text-left">Required</small>
+                                        </div>
+                                    </div> -->
+
+                                    <div class="col-12 pad_2px">
+                                        <input type="text" class="w-100 form-control" id="number" ng2TelInput
+                                            formControlName="mobilenum" required placeholder="{{'MobileNumber' | translate}}"
+                                            [ngClass]="{'is-invalid': submitted && f.mobilenum.errors}">
+                                        <div *ngIf="f.mobilenum.invalid && (f.mobilenum.dirty || f.mobilenum.touched)"
+                                            class="text-danger">
+                                            <small *ngIf="f.mobilenum.errors.required" class="text-left">{{'MobileNumber' | translate}}
+                                                </small>
+                                                <small *ngIf="f.mobilenum.errors.pattern" class="text-left">Please, Enter 10 digit Mobile Number.
+                                                </small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-12  col-md-12 pad_2px">
+                                        <input type="text" class="form-control" id="identificatin_no"
+                                            formControlName="identifino" required placeholder="{{'IdentificationNumber' | translate}}"
+                                            [ngClass]="{'is-invalid': submitted && f.identifino.errors}">
+                                        <div *ngIf="f.identifino.invalid && (f.identifino.dirty || f.identifino.touched)"
+                                            class="text-danger">
+                                            <small *ngIf="f.identifino.errors.required" class="text-left">{{'IdentificationNumber' | translate}}</small>
+                                        </div>
+                                    </div>
+                                    <!-- <div class="col-3 pad_2px">
+                                        <button type="button" class="btn btn-custom">{{'GetOTP' | translate}}</button>
+                                    </div> -->
+                                </div>
+
+                                <div class="clearfix"></div>
+
+
+                                <div class="agree mt-4">
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" id="chbox" formControlName="chbox" required>{{'IAgreeAGFA' | translate}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center sign-in-custom mt-5 ">
+                                    <button type="submit" class="btn btn-secondary" [disabled]="identifictionForm.invalid">{{'SignIn' | translate}}
+                                        </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>
+
+
+
+
+
+

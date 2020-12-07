@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontendDev": {
+    "patview": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontendDev",
+            "outputPath": "dist/patview",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -25,12 +25,23 @@
             "aot": true,
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/ngx-extended-pdf-viewer/assets/",
+                "output": "/assets/"
+              }
             ],
             "styles": [
+              "src/assets/scss/style.scss",
+              "node_modules/font-awesome/scss/font-awesome.scss",
+              "node_modules/intl-tel-input/build/css/intlTelInput.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/intl-tel-input/build/js/intlTelInput.min.js"
+             
+            ]
           },
           "configurations": {
             "production": {
@@ -66,18 +77,19 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "frontendDev:build"
+            "browserTarget": "patview:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "frontendDev:build:production"
+              "browserTarget": "patview:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontendDev:build"
+            "browserTarget": "patview:build"
           }
         },
         "test": {
@@ -114,15 +126,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "frontendDev:serve"
+            "devServerTarget": "patview:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "frontendDev:serve:production"
+              "devServerTarget": "patview:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "frontendDev"
+    }
+  },
+  "defaultProject": "patview",
+  "cli": {
+    "analytics": false
+  }
 }

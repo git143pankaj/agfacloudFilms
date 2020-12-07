@@ -1,0 +1,178 @@
+<app-header></app-header>
+
+
+<div class="front-login-wraper">
+    <div class="row justify-content-center">
+        <div class="col-4 col-xs-12">
+
+            <div class="mobile-body">
+                <div class="mob-logo mt-3 mb-3">
+                    <img src="assets/images/dashboard/frontlogo.jpg" alt="mobile logo">
+                </div>
+                <div class="loginall">
+                    <h5>{{'Login' | translate}}</h5>
+                    <div class="row justify-content-center">
+                        <div class="col-md-12">
+
+
+
+                            <form [formGroup]="otplogin" (ngSubmit)="otpsubmit()" class="form-inline mt-3">
+                                <div class="row">
+                                    <div class="col-3 pad_2px ">
+                                        <input type="text" class="w-100 form-control " id="contrycode"
+                                            formControlName="countrycode" required placeholder="Country"
+                                            [ngClass]="{'is-invalid': submitted && f.countrycode.errors}">
+                                        <div *ngIf="f.countrycode.invalid && (f.countrycode.dirty || f.countrycode.touched)"
+                                            class="text-danger">
+                                            <small *ngIf="f.countrycode.errors.required"
+                                                class="text-left">Required</small>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-9 pad_2px">
+                                        <input type="text" class="w-100 form-control" id="number"
+                                            formControlName="mobilenum" required placeholder="{{'MobileNumber' | translate}}"
+                                            [ngClass]="{'is-invalid': submitted && f.mobilenum.errors}">
+                                        <div *ngIf="f.mobilenum.invalid && (f.mobilenum.dirty || f.mobilenum.touched)"
+                                            class="text-danger">
+                                            <small *ngIf="f.mobilenum.errors.required" class="text-left">{{'MobileNumber' | translate}}
+                                                </small>
+                                                <small *ngIf="f.mobilenum.errors.pattern" class="text-left">Please, Enter 10 digit Mobile Number.
+                                                </small>
+
+                                                
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row mt-3">
+                                    <div class="col-9 pad_2px">
+                                        <input type="text" class="w-100 form-control" id="otp"
+                                            formControlName="enterotp" required placeholder="{{'EnterOTP' | translate}}"
+                                            [ngClass]="{'is-invalid': submitted && f.enterotp.errors}">
+                                        <div *ngIf="f.enterotp.invalid && (f.enterotp.dirty || f.enterotp.touched)"
+                                            class="text-danger">
+                                            <small *ngIf="f.enterotp.errors.required" class="text-left">{{'EnterOTP' | translate}}</small>
+                                        </div>
+                                    </div>
+                                    <div class="col-3 pad_2px">
+                                        <button type="button" class="btn btn-custom">{{'GetOTP' | translate}}</button>
+                                    </div>
+                                </div>
+
+                                <div class="clearfix"></div>
+
+
+                                <div class="agree mt-4">
+                                    <div class="form-group form-check">
+                                        <label class="form-check-label">
+                                            <input class="form-check-input" type="checkbox" id="chbox" formControlName="chbox" required>{{'IAgreeAGFA' | translate}}
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="form-group text-center sign-in-custom mt-5 ">
+                                    <button type="submit" class="btn btn-secondary" [disabled]="otplogin.invalid">{{'SignIn' | translate}}
+                                        </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+
+
+
+
+                    <!-- <div>
+                        Your OTP isv: <span id="otp">{{otpShow}}</span><br/>
+                        <button type="button" (click)="otpgenerate()">Get OTP</button>
+                    </div> -->
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<app-footer></app-footer>
+
+
+
+
+
+
+
+
+
+<!-- <div class="front-login-wraper">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <div class="mobile-bg mt-4">
+                    <img src="assets/images/dashboard/mobilebg.png" alt="mobile_logo">
+
+                    <div class="mobile-icon">
+                        <img src="assets/images/dashboard/mobileicon.png" alt="mobile_logo">
+                    </div>
+                    <div class="header">
+                        <h5>Cloud Films</h5>
+                    </div>
+                    <div class="clearfix"></div>
+
+                    <div class="mobile-body">
+                        <div class="mob-logo">
+                            <img src="assets/images/dashboard/frontlogo.jpg" alt="mobile logo">
+                        </div>
+                        <div class="loginall">
+                            <h5>Login</h5>
+
+                            <form [formGroup]="otplogin" (ngSubmit)="otpsubmit()" class="form-inline mt-3" >
+                                <div class="form-group custom">
+                                    <input type="text" class="form-control " id="contrycode" formControlName="mobilenum">
+                                </div>
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" id="number">
+                                </div>
+
+                                <div class="form-group mt-2 form-inline">
+                                    <input type="text" class="form-control" id="otp">
+                                </div>
+
+                                <button type="submit" class="btn btn-custom">Get OTP</button>
+
+                            </form>
+
+                            <div class="agree mt-3">
+                                <div class="form-group form-check">
+                                    <label class="form-check-label">
+                                        <input class="form-check-input" type="checkbox"> I agree to the AGFA Terms &
+                                        Conditions
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group text-center sign-in-custom mt-4 ">
+                                <button type="submit" class="btn btn-secondary" [disabled]="otplogin.invalid">Sign
+                                    In</button>
+                            </div>
+
+                           
+
+
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div> -->
